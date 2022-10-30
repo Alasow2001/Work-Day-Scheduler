@@ -1,8 +1,9 @@
 var options = {
     startTime: 9,
-    endTime: 17
+    endTime: 23
 }
 function savedButton(e){
+    // Saves the written task into local storage
     var hour = $(e.target).parent().parent().attr('data-hour');
     var task = $(e.target).parent().prev().children().val();
 
@@ -26,18 +27,22 @@ function updateTimeSlots(){
 }
 
 function generateTimeSlots(){
+    // Adds the time slots for the user to then update for the respective time
     for(var hour = options.startTime; hour <= options.endTime; hour++){
+
+        // Stores the task into local storage based on the houre writtem
         var savedItem = localStorage.getItem(hour);
 
-        var timeSlot = $('div').addClass('row time-block');
+        // Adding styles and formats to the timeslot, save buttons, description at the top of the page and text area
+        var timeSlot = $('<div>').addClass('row time-block');
         timeSlot.attr('data-hour', hour);
 
-        var hourSlot = $('div').addClass('col-sm-2 hour').text(moment(hour, 'h').format('h A'));
-        var description = $('div').addClass('col-sm-8 row');
-        var textArea = $('textarea').addClass('col-md-12 description');
+        var hourSlot = $('<div>').addClass('col-sm-2 hour').text(moment(hour, 'h').format('h A'));
+        var description = $('<div>').addClass('col-sm-8 row');
+        var textArea = $('<textarea>').addClass('col-md-12 description');
         textArea.val(savedItem); 
 
-        var saveContainer = $('div').addClass('saveBtn d-flex justify-content-center align-items-center col-sm-2');
+        var saveContainer = $('<div>').addClass('saveBtn d-flex justify-content-center align-items-center col-sm-2');
         saveContainer.on('click', savedButton);
         var saveTask = $('<i>').addClass('fas fa-save');
 
@@ -53,10 +58,13 @@ function generateTimeSlots(){
 
 function initialize(){
 
+    // Returns the generated time slots
     generateTimeSlots();
 
+    // Returns the time slots once a user has entered in any updates for it
     updateTimeSlots();
 
+    // Displays the date and time that the user is visiting the site on
     var currentDay = moment().format('dddd MMMM Do YYYY, hh:mm:ss a');
     $('#currentDay').text(currentDay);
 
