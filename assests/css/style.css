@@ -71,6 +71,7 @@ textarea {
 }
 
 textarea{
+  background-color: #d3d3d3;
   border:none;
   outline: none;
 }
