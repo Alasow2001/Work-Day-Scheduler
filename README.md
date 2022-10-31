@@ -37,7 +37,7 @@ List of formatting dates using moment: https://momentjs.com/
 
 Explaining the dollar sign variable in JQuery: https://www.geeksforgeeks.org/what-does-dollar-sign-means-in-jquery/
 
-Link to deployed website: 
+Link to deployed website: https://alasow2001.github.io/Work-Day-Scheduler/
 
 ## License
 
