@@ -39,6 +39,8 @@ Explaining the dollar sign variable in JQuery: https://www.geeksforgeeks.org/wha
 
 Link to deployed website: https://alasow2001.github.io/Work-Day-Scheduler/
 
+Documentation of the <i> element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
+
 ## License
 
 N/A
