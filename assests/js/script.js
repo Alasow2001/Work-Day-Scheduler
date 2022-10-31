@@ -15,13 +15,14 @@ function updateTimeSlots(){
     var currentTime = moment().hour();
     $('.time-block').each(function(index, element){
 
+        // Depending on the current time, the time slots will have different colours and changes accordingly (i.e., past=grey, present=red, future=green)
         var hour = $(element).attr('data-hour')
         if(hour < currentTime){
-            $(element).find('description').addClass('past');
-        } else if (hour === currentTime){
-            $(element).find('description').addClass('present');
+            $(element).find('.description').addClass('past');
+        } else if (hour == currentTime){
+            $(element).find('.description').addClass('present');
         } else{
-            $(element).find('description').addClass('future');
+            $(element).find('.description').addClass('future');
         }
     })
 }
